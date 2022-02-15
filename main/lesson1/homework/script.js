@@ -50,5 +50,5 @@ const SUM_WITH_DISCOUNT = +(SUM - (SUM * RANDOM_DISCOUNT / 100)).toFixed(2)
 console.log("Amount due: " + SUM_WITH_DISCOUNT)
 
 //11
-const NET_INCOME = SUM_WITH_DISCOUNT - SUM / 2
+const NET_INCOME = SUM / 2 - SUM * RANDOM_DISCOUNT / 100
 console.log("Net income: " + NET_INCOME.toFixed(2))
