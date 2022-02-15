@@ -46,9 +46,7 @@ const RANDOM_DISCOUNT = Math.round(Math.random() * 100)
 console.log("Random discount: " + RANDOM_DISCOUNT)
 
 //10
-//discount doesn't work like in problem)))
-//(100 - RANDOM_DISCOUNT) will be better
-const SUM_WITH_DISCOUNT = Math.round((SUM * (100 - RANDOM_DISCOUNT) / 100) * 100) / 100
+const SUM_WITH_DISCOUNT = +(SUM - (SUM * RANDOM_DISCOUNT / 100)).toFixed(2)
 console.log("Amount due: " + SUM_WITH_DISCOUNT)
 
 //11
