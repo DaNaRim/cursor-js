@@ -24,10 +24,7 @@ const SUM_WITHOUT_PENNIES =
 console.log("Amount of goods without pennies: " + SUM_WITHOUT_PENNIES)
 
 //5
-const SUM_ROUNDING_TO_HUNDREDS =
-  Math.round(PRODUCT_1 / 100) * 100
-  + Math.round(PRODUCT_2 / 100) * 100
-  + Math.round(PRODUCT_3 / 100) * 100
+const SUM_ROUNDING_TO_HUNDREDS = Math.round(SUM / 100) * 100
 console.log("Amount of goods rounded to hundreds: " + SUM_ROUNDING_TO_HUNDREDS)
 
 //6
@@ -38,8 +35,8 @@ console.log("Is sum even: " + IS_SUM_EVEN)
 console.log("Change from 500: " + (500 - SUM))
 
 //8
-const AVERAGE = SUM / 3
-console.log("Average value of prices: " + AVERAGE.toFixed(2))
+const AVERAGE = +(SUM / 3).toFixed(2)
+console.log("Average value of prices: " + AVERAGE)
 
 //9
 const RANDOM_DISCOUNT = Math.round(Math.random() * 100)
@@ -50,5 +47,5 @@ const SUM_WITH_DISCOUNT = +(SUM - (SUM * RANDOM_DISCOUNT / 100)).toFixed(2)
 console.log("Amount due: " + SUM_WITH_DISCOUNT)
 
 //11
-const NET_INCOME = SUM / 2 - SUM * RANDOM_DISCOUNT / 100
-console.log("Net income: " + NET_INCOME.toFixed(2))
+const NET_INCOME = +(SUM / 2 - SUM * RANDOM_DISCOUNT / 100).toFixed(2)
+console.log("Net income: " + NET_INCOME)
