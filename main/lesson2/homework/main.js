@@ -18,6 +18,5 @@ let sum = 0
 for (let i = n; i <= m; i++) {
   if (skipPairNum && i % 2 === 0) continue
   sum += i
-  console.log(sum)
 }
 console.log(sum)
