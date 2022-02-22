@@ -1,13 +1,18 @@
 "use strict"
 
 function getMaxDigit(number) {
-  const array = Array.from(String(number), Number)
+  const numStr = ("" + number).split('.').join("")
 
-  let max = array[0]
-  for (let i = 1; i < array.length; i++) {
-    if (array[i] > max) max = array[i]
-  }
-  return max
+  return Math.max.apply(null, numStr.split(""))
+
+  // variant 2
+  // const array = Array.from(String(number), Number)
+  //
+  // let max = array[0]
+  // for (let i = 1; i < array.length; i++) {
+  //   if (array[i] > max) max = array[i]
+  // }
+  // return max
 }
 
 function customPow(a, b) {
