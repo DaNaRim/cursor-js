@@ -26,7 +26,7 @@ function customPow(a, b) {
 }
 
 function toPascalCase(str) {
-  return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase()
+  return str[0].toUpperCase() + str.substring(1).toLowerCase()
 }
 
 function getMoneyAfterTax(money) {
