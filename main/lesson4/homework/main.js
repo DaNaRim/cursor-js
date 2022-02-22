@@ -45,9 +45,9 @@ function countLetter(letter, word) {
 
   // variant3
   // let count = 0
-  // let wordArr = [...word]
+  // let wordArr = [...word.toLowerCase()]
   // for (let i = 0; i < wordArr.length; i++) {
-  //   if (letter.toLowerCase() === wordArr[i].toLowerCase()) count++
+  //   if (letter === wordArr[i]) count++
   // }
   // return count
 }
@@ -95,7 +95,7 @@ console.log(`Function №2:  ${customPow(3, 8)}`)
 console.log(`Function №3:  ${toPascalCase("vLAd")}`)
 console.log(`Function №4:  ${getMoneyAfterTax(1000)}`)
 console.log(`Function №5:  ${getRandomNumber(1, 10)}`)
-console.log(`Function №6:  ${countLetter("a", "aasdffajaa")}`)
+console.log(`Function №6:  ${countLetter("a", "aasdffajAa")}`)
 
 console.log(`Function №7:  ${convertCurrency("100$")}`)
 console.log(`Function №7:  ${convertCurrency("2500UaH")}`)
