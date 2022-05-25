@@ -56,7 +56,7 @@ function countLetter(letter, word) {
 function convertCurrency(money) {
   const RATE = 25
 
-  if (money.substring(money.length - 1).toLowerCase() === "$") {
+  if (money.substring(money.length - 1) === "$") {
     return Number(money.substring(0, money.length - 1)) * RATE
 
   } else if (money.substring(money.length - 3).toLowerCase() === "uah") {
