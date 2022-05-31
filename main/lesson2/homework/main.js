@@ -1,5 +1,17 @@
 "use strict"
 
+// let startNumber
+// do {
+//   if (!isNaN(Number(startNumber)) && startNumber <= 0 && startNumber !== "") {
+//     alert("Number must be positive")
+//   }
+//   if (isNaN(Number(startNumber)) && typeof startNumber === "string") {
+//     alert("You must type number")
+//   }
+//   startNumber = prompt("Write first number")
+// } while (isNaN(startNumber) || startNumber <= 0)
+// alert(startNumber)
+
 let n
 do {
   n = +prompt("Write n (integer number, from -100_000 to 99_999)")
