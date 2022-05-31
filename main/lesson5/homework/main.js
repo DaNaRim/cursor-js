@@ -15,12 +15,12 @@ function pairStudents() {
 }
 
 function handOutProjectsToStudents(pairs) {
-  let arr = JSON.parse(JSON.stringify(pairs))
+  let result = []
 
   for (let i = 0; i < arr.length; i++) {
-    arr[i].push(THEMES[i])
+    result.push([pairs[i].join(" і "), THEMES[i]])
   }
-  return arr
+  return result
 }
 
 function giveGradesToStudents() {
