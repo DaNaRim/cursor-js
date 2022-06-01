@@ -17,7 +17,7 @@ function pairStudents() {
 function handOutProjectsToStudents(pairs) {
   let result = []
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < pairs.length; i++) {
     result.push([pairs[i].join(" і "), THEMES[i]])
   }
   return result
