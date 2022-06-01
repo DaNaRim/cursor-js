@@ -1,17 +1,18 @@
 "use strict"
 
-const STUDENTS = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"]
+const STUDENTS = ["Олександр", "Ігор", "Олексій", "Світлана", "Іра", "Олена"]
 
 const THEMES = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"]
 
 const MARKS = [4, 5, 5, 3, 4, 5]
 
 function pairStudents() {
-  return [
-    [STUDENTS[0], STUDENTS[2]],
-    [STUDENTS[1], STUDENTS[3]],
-    [STUDENTS[4], STUDENTS[5]]
-  ]
+  let pairs = []
+
+  for (let i = 0; i < (STUDENTS.length / 2); i++) {
+    pairs.push([STUDENTS[i], STUDENTS[STUDENTS.length - i - 1]])
+  }
+  return pairs
 }
 
 function handOutProjectsToStudents(pairs) {
