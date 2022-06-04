@@ -32,8 +32,7 @@ function getAverage(...numbers) {
 
 function getMedian(...numbers) {
   const nums = numbers.filter((num => Number.isInteger(num)))
-
-  nums.sort((a, b) => a - b)
+                      .sort((a, b) => a - b)
 
   if (nums.length % 2 === 0) {
     return (nums[nums.length / 2 - 1] + nums[nums.length / 2]) / 2
@@ -42,37 +41,32 @@ function getMedian(...numbers) {
 }
 
 function filterEvenNumbers(...numbers) {
-  return numbers.filter((num => num % 2 === 1))
+  return numbers.filter(num => num % 2 === 1)
 }
 
 function countPositiveNumbers(...numbers) {
-  return numbers.filter((num => num > 0)).length
+  return numbers.filter(num => num > 0).length
 }
 
 function getDividedByFive(...numbers) {
-  return numbers.filter((num => num % 5 === 0))
+  return numbers.filter(num => num % 5 === 0)
 }
 
 function replaceBadWords(string) {
   const badWords = ["shit", "fuck"]
 
-  const words = string.split(" ")
+  let result = string
+  badWords.forEach(badWord => result = result.replace(badWord, "*".repeat(badWord.length)))
+  return result
 
-  for (const badWord of badWords) {
-    for (const i in words) {
-      words[i] = words[i].replace(badWord, "*".repeat(badWord.length))
-    }
-  }
-  return words.join(" ")
+  // const words = string.split(" ")
 
-  // Variant 2
-  //
-  // let result = string
-  //
   // for (const badWord of badWords) {
-  //   result = result.replace(badWord, "*".repeat(badWord.length))
+  //   for (const i in words) {
+  //     words[i] = words[i].replace(badWord, "*".repeat(badWord.length))
+  //   }
   // }
-  // return result
+  // return words.join(" ")
 }
 
 function divideByThree(word) {
@@ -101,8 +95,8 @@ function generateCombinations(word) {
   for (let i = 0; i < word.length; i++) {
     let subLetterCombinations = generateCombinations(word.slice(0, i) + word.slice(i + 1, word.length + 1))
 
-    for (let j = 0; j < subLetterCombinations.length; j++) {
-      letterCombinations.push(word[i] + subLetterCombinations[j])
+    for (const comb of subLetterCombinations) {
+      letterCombinations.push(word[i] + comb)
     }
   }
   return letterCombinations
