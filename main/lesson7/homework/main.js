@@ -41,7 +41,7 @@ function getMedian(...numbers) {
 }
 
 function filterEvenNumbers(...numbers) {
-  return numbers.filter(num => num % 2 === 1)
+  return numbers.filter(num => num % 2)
 }
 
 function countPositiveNumbers(...numbers) {
@@ -96,6 +96,7 @@ function generateCombinations(word) {
     let subLetterCombinations = generateCombinations(word.slice(0, i) + word.slice(i + 1, word.length + 1))
 
     for (const comb of subLetterCombinations) {
+      if (letterCombinations.includes(word[i] + comb)) continue
       letterCombinations.push(word[i] + comb)
     }
   }
