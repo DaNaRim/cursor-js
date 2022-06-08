@@ -33,7 +33,7 @@ function getSubjects(student) {
 }
 
 function getAverageMark(student) {
-  const scores = [].concat(...Object.values(student["subjects"]))
+  const scores = Object.values(student["subjects"]).flat()
   const average = scores.reduce((a, b) => a + b, 0) / scores.length
   return Number(average.toFixed(2))
 }
