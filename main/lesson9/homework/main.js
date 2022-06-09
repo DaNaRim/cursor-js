@@ -17,21 +17,16 @@ function getTotalTaxes() {
 }
 
 function getMySalary() {
-  const country = this
-
-  const salaryLogger = function () {
+  const salaryLogger = () => {
     const salary = Math.floor(Math.random() * 500 + 1500)
-    const taxes = getMyTaxes.call(country, salary)
+    const taxes = getMyTaxes.call(this, salary)
     console.log({
       salary: salary,
       taxes: taxes,
       profit: (salary * 100 - taxes * 100) / 100
     })
   }
-
-  setInterval(function () {
-    salaryLogger()
-  }, 10_000)
+  setInterval(() => salaryLogger(), 10_000)
 }
 
 console.log(getMyTaxes.call(UKRAINE, 100))
