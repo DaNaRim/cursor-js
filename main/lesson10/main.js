@@ -160,3 +160,58 @@ const bismark = new BattleShipTorpedoes("Bismark", "German", 80_000, 20_000, 6)
 const monaghan = new Destroyer("Monaghan", "USA", 8900, 400)
 
 console.log(bismark)
+
+
+function Student3(name) {
+  this.name = name
+}
+
+const st = new Student3("Ivan")
+console.log(st)
+
+if (!Array.prototype.find) {
+  Array.prototype.find = function () {
+    console.log("we have find")
+  }
+}
+
+
+const userInput = "Rachel Green, Monica Geller, Phoebe Buffay"
+
+class User {
+  constructor(name) {
+    this.name = name
+  }
+}
+
+const users = userInput.split(", ").map(name => new User(name))
+console.log(users)
+
+class Users {
+  constructor() {
+    this.users = []
+  }
+
+  addUser(newUser) {
+    if (this._includes(newUser)) return
+    this.users.push(newUser)
+  }
+
+  _includes(newUser) {
+    if (this.users.some((user) => user.name === newUser.name)) {
+      console.log("Already exists")
+      return true
+    }
+    return false
+  }
+}
+
+const users2 = new Users()
+
+userInput.split(", ").forEach(name => {
+  users2.addUser(new User(name))
+})
+
+console.log(users2)
+
+users2.addUser(new User("Phoebe Buffay"))
