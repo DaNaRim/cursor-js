@@ -28,7 +28,7 @@ class Student {
 
   getAverageMark() {
     if (this.isDismissed) return null
-    return this._marks.reduce((a, b) => a + b, 0) / this._marks.length
+    return this._marks.reduce((a, b) => a + b, 0) / (this._marks.length | 1)
   }
 
   dismiss() {
@@ -73,5 +73,5 @@ console.log(ostap.marks)
 
 
 const rob = new BudgetStudent("Hogwarts", 3, "Rob Banks")
-
+rob.marks = [5, 5, 5]
 console.log(rob.getInfo())
