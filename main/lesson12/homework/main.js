@@ -93,7 +93,10 @@ function addDemotivator() {
   setTimeout(() => document.body.style.backgroundColor = "black", 10)
 
   const keys = document.querySelectorAll(".key")
-  keys.forEach(key => key.classList.add("small_key"))
+  keys.forEach(key => {
+    key.classList.add("small_key")
+    key.addEventListener("click", processButtonPress)
+  })
 }
 
 function removeDemotivator() {
