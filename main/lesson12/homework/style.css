@@ -7,6 +7,7 @@ body, html {
     font-family: sans-serif;
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -34,7 +35,8 @@ main {
 
 .key {
     font-size: 1.5rem;
-    width: 10rem;
+    width: 10%;
+    max-width: 10rem;
     margin: 1rem;
     padding: 1rem 0.5rem;
     transition: all 0.07s ease;
@@ -157,6 +159,62 @@ kbd {
 }
 
 #tbc_arrow.arrow_appear {
-    left: 70%;
+    left: calc(100% - 420px - 30px);
     visibility: visible;
 }
+
+@media screen and (max-width: 640px) {
+    .keys {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        display: grid;
+        transform: translate(-50%, -50%);
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: calc(20% - 50px) calc(20% - 50px) calc(20% - 50px);
+        grid-gap: 0;
+    }
+
+    .key {
+        width: 50px;
+    }
+
+    .key > kbd {
+        font-size: 3rem;
+    }
+
+    .small_key,
+    .small_key:first-child,
+    .small_key:last-child {
+        font-size: 1.2rem !important;
+        width: 3rem !important;
+        margin: 1rem !important;
+        padding: 0.2rem 0.1rem !important;
+        border: 0.16rem solid black;
+        border-radius: 0.2rem;
+    }
+
+    .small_key > kbd {
+        font-size: 1.4rem;
+    }
+
+    .sound {
+        font-size: 0.8rem;
+    }
+
+    .small_key > kbd + .sound {
+        font-size: 0.5rem;
+    }
+
+    #tbc_arrow {
+        top: 90%;
+        left: 80%;
+        max-width: 252px;
+        max-height: 81px;
+    }
+
+    #tbc_arrow.arrow_appear {
+        left: calc(100% - 252px - 20px);
+    }
+}
+
