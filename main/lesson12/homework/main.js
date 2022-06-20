@@ -117,13 +117,11 @@ function removeDemotivator() {
 
 function addToBeContinued() {
   removeToBeContinued()
-  console.log(tbcTimeoutId)
-  if (tbcTimeoutId) clearTimeout(tbcTimeoutId)
-
-  const arrow = document.querySelector("#tbc_arrow")
 
   tbcTimeoutId = setTimeout(() => {
+    const arrow = document.querySelector("#tbc_arrow")
     arrow.classList.add("arrow_appear")
+
     document.body.style.backgroundColor = "#a28f57"
     tbcTimeoutId = undefined
   }, 4_650)
