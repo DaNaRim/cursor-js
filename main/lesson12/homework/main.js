@@ -15,6 +15,11 @@ const VALID_KEYCODES = {
 let isDemotivatorWorking = false
 let tbcTimeoutId
 
+window.onload = function () {
+  const alert = document.querySelector(".alert")
+  alert.style.display = "none"
+}
+
 window.addEventListener("keydown", processButtonPress)
 
 document.querySelectorAll(".key").forEach(key => {

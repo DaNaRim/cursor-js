@@ -18,6 +18,11 @@ main {
     min-height: 100%;
 }
 
+.alert {
+    position: absolute;
+    left: 38%;
+}
+
 .keys {
     display: flex;
     align-items: center;
