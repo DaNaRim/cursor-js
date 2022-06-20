@@ -107,7 +107,10 @@ function removeDemotivator() {
   document.body.style.removeProperty("background-color")
 
   const keys = document.querySelectorAll(".key")
-  keys.forEach(key => key.classList.remove("small_key"))
+  keys.forEach(key => {
+    key.classList.remove("small_key")
+    key.addEventListener("click", processButtonPress)
+  })
 
   isDemotivatorWorking = false
 }
