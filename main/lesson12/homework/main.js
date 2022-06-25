@@ -48,15 +48,14 @@ function processButtonPress(e) {
 function playAudio(keyCode) {
   const audios = document.querySelectorAll("audio")
   audios.forEach(a => {
-    if (+a.getAttribute("data-key") !== keyCode) {
+    if (+a.getAttribute("data-key") === keyCode) {
+      a.currentTime = 0
+      a.play()
+    } else {
       a.pause()
       a.currentTime = 0
     }
   })
-
-  const audio = document.querySelector(`audio[data-key="${keyCode}"]`)
-  audio.currentTime = 0
-  audio.play()
 }
 
 function showImage(keyCode) {
