@@ -94,7 +94,7 @@ function generateCharacterHtml(character) {
         </div>
         <div class="character-info">
             <h2 class="character-name">${character[nameKey]}</h2>
-            <p class="character-date">Date od birth: <span>${character[birthYearKey]}</span></p>
+            <p class="character-date">Birth year: <span>${character[birthYearKey]}</span></p>
             <p class="character-gender">Gender: ${genderIcon}</p>
         </div>
     </div>
