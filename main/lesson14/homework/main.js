@@ -3,7 +3,7 @@
 axios.defaults.baseURL = "https://swapi.dev/api/"
 
 const main = document.querySelector("main")
-const loading = document.querySelector(".lds-ring")
+const loadingSpinner = document.querySelector(".lds-ring")
 const filmInput = document.querySelector("#film-number")
 const wookieCheckbox = document.querySelector("#is-wookie")
 
@@ -23,11 +23,11 @@ function reload() {
 }
 
 function showCharacters() {
-  loading.classList.add("visible")
+  loadingSpinner.classList.add("visible")
 
   if (filmInput.value > filmInput.max || filmInput.value < filmInput.min) {
     alert("Invalid film number")
-    loading.classList.remove("visible")
+    loadingSpinner.classList.remove("visible")
     return
   }
 
@@ -42,7 +42,7 @@ function showCharacters() {
     })
     .catch(e => alert(e))
     .finally(() => {
-      loading.classList.remove("visible")
+      loadingSpinner.classList.remove("visible")
       lastAction = "showCharacters"
     })
 }
@@ -103,7 +103,7 @@ function generateCharacterHtml(character) {
 }
 
 function showPlanets() {
-  loading.classList.add("visible")
+  loadingSpinner.classList.add("visible")
 
   const link = this && this.getAttribute("data-link") ? this.getAttribute("data-link") : "planets"
 
@@ -152,7 +152,7 @@ function showPlanets() {
 
     .catch(e => alert(e))
     .finally(() => {
-      loading.classList.remove("visible")
+      loadingSpinner.classList.remove("visible")
       lastAction = "showPlanets"
     })
 }
