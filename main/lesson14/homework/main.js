@@ -72,15 +72,12 @@ function generateCharacterHtml(character) {
   const characterId = character[urlKey].split("/")[5]
 
   const genderIcon = (() => {
-    switch (character[genderKey]) {
+     switch (character[genderKey]) {
       case "male":
-      case "scraanwo":
-        return "<i class=\"fa-solid fa-mars\"></i>"
+      case "scraanwo": return "<i class=\"fa-solid fa-mars\"></i>"
       case "female":
-      case "wwwoscraanwo":
-        return "<i class=\"fa-solid fa-venus\"></i>"
-      default:
-        return "<i class=\"fa-solid fa-genderless\"></i>"
+      case "wwwoscraanwo": return "<i class=\"fa-solid fa-venus\"></i>"
+      default: return "<i class=\"fa-solid fa-genderless\"></i>"
     }
   })()
 
