@@ -29,11 +29,11 @@ function showCharacters() {
   }
 
   findCharactersByFilm(filmInput.value)
-    .then(res => res.map(ch => generateCharacterHtml(ch)))
+    .then(res => res.map(ch => generateCharacterHtml(ch)).join(""))
     .then(res => {
       main.innerHTML = `
         <div class="characters">
-            ${res.join("").replaceAll(",", "")}
+            ${res}
         </div>
       `
     })
