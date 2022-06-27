@@ -8,6 +8,7 @@ const filmInput = document.querySelector("#film-number")
 const wookieCheckbox = document.querySelector("#is-wookie")
 
 let lastAction = ""
+let currentPlanetPageNum
 
 document.querySelector("#getCharacters").addEventListener("click", showCharacters)
 document.querySelector("#getPlanets").addEventListener("click", showPlanets)
@@ -106,18 +107,11 @@ function showPlanets() {
 
   const link = this && this.getAttribute("data-link") ? this.getAttribute("data-link") : "planets"
 
-  const leftArrow = document.querySelector(".fa-caret-left")
-  const rightArrow = document.querySelector(".fa-caret-right")
-
-  let page
-  if (leftArrow) {
-    page = +leftArrow.getAttribute("data-link").slice(-1) + 1
-  } else if (rightArrow) {
-    page = +rightArrow.getAttribute("data-link").slice(-1) - 1
-  }
-
   const params = new URLSearchParams()
-  if (page && !link.includes("page")) params.append("page", String(page))
+
+  if (lastAction === "showPlanets" && link === "planets") {
+    params.append("page", String(currentPlanetPageNum))
+  }
 
   new Promise(async res => res((await axios.get(link, {params})).data))
     .then(async res => {
@@ -147,6 +141,11 @@ function showPlanets() {
             </div>
         </div>
       `
+      return res
+    })
+    .then(res => {
+      if (res.previous) currentPlanetPageNum = +res.previous.slice(-1) + 1
+      else currentPlanetPageNum = +res.next.slice(-1) - 1
     })
     .then(() => document.querySelectorAll(".clickable-arrow")
                         .forEach(arrow => arrow.addEventListener("click", showPlanets)))
