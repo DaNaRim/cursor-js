@@ -15,11 +15,8 @@ document.querySelector("#getPlanets").addEventListener("click", showPlanets)
 wookieCheckbox.addEventListener("change", reload)
 
 function reload() {
-  if (lastAction === "showCharacters") {
-    showCharacters()
-  } else if (lastAction === "showPlanets") {
-    showPlanets()
-  }
+  if (lastAction === "showCharacters") showCharacters()
+  else if (lastAction === "showPlanets") showPlanets()
 }
 
 function showCharacters() {
