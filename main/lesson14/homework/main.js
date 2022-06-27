@@ -119,7 +119,7 @@ function showPlanets() {
 
       //fix server bug
       if (wookieCheckbox.checked && typeof planets === "string") {
-        planets = JSON.parse(String(planets).replaceAll(`whhuanan`, ` "whhuanan" `))
+        planets = JSON.parse(planets.replace(`whhuanan`, ` "whhuanan" `))
       }
 
       main.innerHTML = `
