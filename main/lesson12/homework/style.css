@@ -48,6 +48,10 @@ main {
     text-shadow: 0 0 0.5rem black;
 }
 
+.key:hover {
+    cursor: pointer;
+}
+
 .playing, .small_key.playing {
     transform: scale(1.1);
     border-color: #ffc600;
