@@ -1,0 +1,42 @@
+//.content {
+//  ul {
+//    li {
+//      a {
+//        &:hover {
+//
+//        }
+//      }
+//
+//      &:hover {
+//
+//      }
+//    }
+//  }
+//}
+
+$main-color: rgb(100, 63, 63);
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $main-color;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  transition: all 0.5s;
+  background-color: lighten($main-color, 10%);
+
+  &:hover {
+    background-color: darken($main-color, 30%);
+  }
+}
+
+
+
