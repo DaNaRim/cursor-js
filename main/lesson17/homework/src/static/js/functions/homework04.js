@@ -1,7 +1,7 @@
 "use strict"
 
 export function getMaxDigit(number) {
-  return Math.max(...+("" + number)
+  return Math.max(...("" + number)
     .replaceAll(".", "")
     .split("")
   )

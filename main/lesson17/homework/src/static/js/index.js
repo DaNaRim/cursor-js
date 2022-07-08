@@ -5,13 +5,13 @@ import "../css/index.css"
 import {getMaxDigit} from "./functions/homework04"
 import {pairStudents} from "./functions/homework05"
 import {getRandomArray} from "./functions/homework07"
-import {getSubjects} from "./functions/homework08"
-import {getMyTaxes} from "./functions/homework09"
+import {STUDENTS, getSubjects} from "./functions/homework08"
+import {UKRAINE, getMyTaxes} from "./functions/homework09"
 import {Student} from "./functions/homework10"
 import {createIdGenerator} from "./functions/homework15"
 
 
-const ostap = new Student("Вища Школа Психотерапії м.Одеса", 1, "Остап Родоманський Бендер")
+const ostap = new Student("Super univercity", 1, "Ostap ostapovich")
 const idGenerator = createIdGenerator()
 
 console.log("homework04 > getMaxDigit: " + getMaxDigit(9.385))

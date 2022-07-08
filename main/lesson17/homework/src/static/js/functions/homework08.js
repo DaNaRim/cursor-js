@@ -1,6 +1,6 @@
 "use strict"
 
-const STUDENTS = [{
+export const STUDENTS = [{
   name: "Tanya",
   course: 3,
   subjects: {
