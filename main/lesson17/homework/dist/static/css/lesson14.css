@@ -1,0 +1,389 @@
+html {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+body {
+    position: relative;
+    height: 85vh;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+main {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    width: 100%;
+    height: 85vh;
+    padding: 40px;
+    background-color: orange;
+}
+
+.start_message {
+    text-align: center;
+}
+
+.tools {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: red;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+button {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    line-height: 1.2;
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 48px;
+    margin: 0 10px;
+    padding: 5px 16px;
+    list-style: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: box-shadow .15s, transform .15s;
+    text-align: left;
+    text-decoration: none;
+    color: #36395A;
+    border-width: 0;
+    border-radius: 4px;
+    background-color: #FCFCFD;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+                #D6D6E7 0 -3px 0 inset;
+    appearance: none;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+}
+
+button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset,
+                rgba(45, 35, 66, 0.4) 0 2px 4px,
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+                #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+                #D6D6E7 0 -3px 0 inset;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: #D6D6E7 0 3px 7px inset;
+}
+
+#film-number {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 80px;
+    margin: 0 10px;
+    padding: 10px 16px;
+    list-style: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: left;
+    text-decoration: none;
+    color: #36395A;
+    border-width: 0;
+    border-radius: 4px;
+    background-color: #FCFCFD;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+                rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+                #D6D6E7 0 -3px 0 inset;
+}
+
+label {
+    font-size: 18px;
+    color: #FCFCFD;
+    text-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px;
+}
+
+.button_character {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 5px solid #FCFCFD;
+    border-radius: 4px;
+}
+
+#getPlanets {
+    width: 100px;
+}
+
+.wookie_wrapper {
+    display: flex;
+}
+
+.wookie_wrapper > label {
+    line-height: 50px;
+}
+
+
+/*
+checkbox
+ */
+
+input[type="checkbox"].switch_1 {
+    font-size: 30px;
+    position: relative;
+    width: 3.5em;
+    height: 1.5em;
+    margin-left: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 3em;
+    outline: none;
+    background: #ddd;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="checkbox"].switch_1:checked {
+    background: #0ebeff;
+}
+
+input[type="checkbox"].switch_1:after {
+    position: absolute;
+    left: 0;
+    width: 1.5em;
+    height: 1.5em;
+    content: "";
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.3);
+}
+
+input[type="checkbox"].switch_1:checked:after {
+    left: calc(100% - 1.5em);
+}
+
+
+/*
+loading spinner
+ */
+
+.lds-ring {
+    position: absolute;
+    top: 20px;
+    left: calc(100% - 80px - 20px);
+    display: inline-block;
+    visibility: hidden;
+    width: 80px;
+    height: 80px;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.lds-ring div {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border: 8px solid;
+    border-color: #fff transparent transparent transparent;
+    border-radius: 50%;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*
+characters
+ */
+
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.character-card {
+    box-sizing: border-box;
+    max-width: 240px;
+    max-height: 370px;
+    margin: 10px;
+    padding: 15px;
+    border: 5px solid black;
+}
+
+.character-image > img {
+    display: block;
+    object-fit: contain;
+}
+
+.character-name {
+    overflow-wrap: break-word;
+}
+
+.character-date > span {
+    font-weight: bold;
+}
+
+
+/*
+planets
+ */
+
+.circle-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    border-radius: 51%;
+}
+
+.circle {
+    font-weight: 600;
+    line-height: 40px;
+    position: absolute;
+    top: 51%;
+    left: 51%;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: -51px;
+    text-align: center;
+    border-radius: 51%;
+    background: red;
+    overflow-wrap: break-word;
+}
+
+.planets-buttons {
+    position: absolute;
+    top: 27%;
+    left: 26%;
+    display: flex;
+}
+
+.planets-arrow {
+    font-size: 150px;
+    width: 100px;
+    height: 200px;
+}
+
+.planets-arrow > svg:hover {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 790px) {
+    body, main {
+        height: 75vh;
+    }
+
+    .tools {
+        width: 100%;
+        height: 25%;
+    }
+
+    .buttons {
+        padding: 10px;
+    }
+
+    #getPlanets,
+    .wookie_wrapper {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .circle-wrapper {
+        width: 300px;
+        height: 300px;
+        margin: 50px auto;
+    }
+
+    .circle {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 40px;
+        top: 53%;
+        left: 54%;
+        width: 70px;
+        height: 70px;
+        margin: -51px;
+    }
+
+    .planets-buttons {
+        top: 20%;
+        left: 20%;
+    }
+
+    .planets-arrow {
+        font-size: 150px;
+        width: 100px;
+        height: 200px;
+    }
+}
+
